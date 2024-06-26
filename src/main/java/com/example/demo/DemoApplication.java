@@ -10,11 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.sql.Date;
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner {
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+public class DemoApplication {
+//	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	PlayerSpringDataRepository repo;
+//	@Autowired
+//	PlayerSpringDataRepository repo;
 //	PlayerRepository repo;
 //	PlayerDAO dao;
 
@@ -22,18 +22,18 @@ public class DemoApplication implements CommandLineRunner {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		logger.info("\n\nInserting Player: {}", repo.save(new Player("Djokovic", "Serbia", Date.valueOf("1987-05-22"), 81)));
-		logger.info("\n\n>>Inserting Player: {}\n", repo.save(new Player("Monfils", "France", Date.valueOf("1986-09-01"), 10)));
-		logger.info("\n\n>>Inserting Player: {}\n", repo.save(new Player("Thiem", "Austria", new Date(System.currentTimeMillis()), 17)));
-
-		logger.info("\n\n>>Updating player with id 3: {}", repo.save(new Player(3, "Thiem", "Austria", Date.valueOf("1993-09-03"), 17)));
-
-		logger.info("\n\n>>Player with id 2: {}", repo.findById(2));
-		repo.deleteById(2);
-		logger.info("\n\n>>All players in the db: {}", repo.findAll());
-	}
+//	@Override
+//	public void run(String... args) throws Exception {
+//		logger.info("\n\nInserting Player: {}", repo.save(new Player("Djokovic", "Serbia", Date.valueOf("1987-05-22"), 81)));
+//		logger.info("\n\n>>Inserting Player: {}\n", repo.save(new Player("Monfils", "France", Date.valueOf("1986-09-01"), 10)));
+//		logger.info("\n\n>>Inserting Player: {}\n", repo.save(new Player("Thiem", "Austria", new Date(System.currentTimeMillis()), 17)));
+//
+//		logger.info("\n\n>>Updating player with id 3: {}", repo.save(new Player(3, "Thiem", "Austria", Date.valueOf("1993-09-03"), 17)));
+//
+//		logger.info("\n\n>>Player with id 2: {}", repo.findById(2));
+//		repo.deleteById(2);
+//		logger.info("\n\n>>All players in the db: {}", repo.findAll());
+//	}
 
 //	@Override
 //	public void run(String... args) throws Exception {
